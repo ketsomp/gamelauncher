@@ -3,12 +3,15 @@ from PIL import Image,ImageTk
 import colorgame
 import rockpaperscissors
 import tictactoe
+from os import path
 
 win=Tk()
 
 
 win.title('Game Launcher')
 win.geometry('300x300')
+
+dog=path.join(path.dirname(path.abspath(__file__)))
 
 def colorgamefunc():
 	colorgame.colorprog()
@@ -19,7 +22,7 @@ def rpsfunc():
 
 def tttfunc():
 	tictactoe.tttprog()
-gameimg=Image.open('controller.jpg')
+gameimg=Image.open(dog+'/assets/controller.jpg')
 gameimg.thumbnail((100,100),Image.ANTIALIAS)
 gamephoto=ImageTk.PhotoImage(gameimg)
 Label(win,image=gamephoto).place(x=80,y=170)

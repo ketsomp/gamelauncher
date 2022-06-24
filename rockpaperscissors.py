@@ -2,10 +2,11 @@ from tkinter import *
 import tkinter.messagebox as msg
 import random
 from PIL import Image,ImageTk
-
+from os import path
 userscore=compscore=0
 uc=cc=''
 rounds=0
+dog=path.join(path.dirname(path.abspath(__file__)))
 def rpsprog():
 
 	
@@ -88,25 +89,25 @@ def rpsprog():
 		resetbutton()
 		rps.destroy()
 
-	rockimg=Image.open('rock.png')
+	rockimg=Image.open(dog+'/assets/rock.png')
 	rockimg.thumbnail((30,50),Image.ANTIALIAS)
 	rockphoto=ImageTk.PhotoImage(rockimg)
-	paperimg=Image.open('paper.png')
+	paperimg=Image.open(dog+'/assets/paper.png')
 	paperimg.thumbnail((30,30),Image.ANTIALIAS)
 	paperphoto=ImageTk.PhotoImage(paperimg)
-	scissorimg=Image.open('scissor.png')
+	scissorimg=Image.open(dog+'/assets/scissor.png')
 	scissorimg.thumbnail((30,30),Image.ANTIALIAS)
 	scissorphoto=ImageTk.PhotoImage(scissorimg)
-	rpsimg=Image.open('rps.png')
+	rpsimg=Image.open(dog+'/assets/rps.png')
 	rpsimg.thumbnail((100,100),Image.ANTIALIAS)
 	rpsphoto=ImageTk.PhotoImage(rpsimg)
-	winimg=Image.open('youwin.png')
+	winimg=Image.open(dog+'/assets/youwin.png')
 	winimg.thumbnail((100,100),Image.ANTIALIAS)
 	winphoto=ImageTk.PhotoImage(winimg)
-	loseimg=Image.open('youlose.png')
+	loseimg=Image.open(dog+'/assets/youlose.png')
 	loseimg.thumbnail((100,100),Image.ANTIALIAS)
 	losephoto=ImageTk.PhotoImage(loseimg)
-	tieimg=Image.open('tie.jpg')
+	tieimg=Image.open(dog+'/assets/tie.jpg')
 	tieimg.thumbnail((90,90),Image.ANTIALIAS)
 	tiephoto=ImageTk.PhotoImage(tieimg)
 
